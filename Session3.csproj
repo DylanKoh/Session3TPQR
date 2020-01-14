@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountCreation.cs">
+    <Compile Include="3.2_AccountCreation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountCreation.Designer.cs">
-      <DependentUpon>AccountCreation.cs</DependentUpon>
+    <Compile Include="3.2_AccountCreation.Designer.cs">
+      <DependentUpon>3.2_AccountCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminMain.cs">
       <SubType>Form</SubType>
@@ -103,14 +103,14 @@
     <Compile Include="HotelSummary.Designer.cs">
       <DependentUpon>HotelSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotel_Booking.cs">
-      <DependentUpon>Session3Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="3.1_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="3.1_Login.Designer.cs">
+      <DependentUpon>3.1_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel_Booking.cs">
+      <DependentUpon>Session3Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,8 +147,8 @@
     <Compile Include="User_Type.cs">
       <DependentUpon>Session3Model.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountCreation.resx">
-      <DependentUpon>AccountCreation.cs</DependentUpon>
+    <EmbeddedResource Include="3.2_AccountCreation.resx">
+      <DependentUpon>3.2_AccountCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMain.resx">
       <DependentUpon>AdminMain.cs</DependentUpon>
@@ -168,8 +168,8 @@
     <EmbeddedResource Include="HotelSummary.resx">
       <DependentUpon>HotelSummary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="3.1_Login.resx">
+      <DependentUpon>3.1_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -212,19 +212,19 @@
     <Content Include="Images\ASC_2020_Logo.png" />
     <Content Include="Images\ASC_2020_Logo_Monochrome_BlackBG.bmp" />
     <Content Include="Images\ASC_2020_Logo_Monochrome_WhiteBG.bmp" />
-    <None Include="Images\Hotel_Map_Marking.png" />
-    <Content Include="Properties\Hotel_Map_Marking.png" />
-    <Content Include="Properties\Hotel_Map_Original.png" />
     <Content Include="Session3Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Session3Model.Context.cs</LastGenOutput>
       <DependentUpon>Session3Model.edmx</DependentUpon>
+      <LastGenOutput>Session3Model.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Session3Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Session3Model.edmx</DependentUpon>
       <LastGenOutput>Session3Model.cs</LastGenOutput>
     </Content>
+    <None Include="Images\Hotel_Map_Marking.png" />
+    <Content Include="Properties\Hotel_Map_Marking.png" />
+    <Content Include="Properties\Hotel_Map_Original.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\user2\source\repos\Session3\Session3Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Asus\OneDrive - Temasek Polytechnic\WSS2020_QR_TP_Codes\Session3\Dylan Koh-20200113T022433Z-001\Dylan Koh\Session3\Session3Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
