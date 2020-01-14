@@ -209,9 +209,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\ASC_2020_Logo.png" />
-    <Content Include="Images\ASC_2020_Logo_Monochrome_BlackBG.bmp" />
-    <Content Include="Images\ASC_2020_Logo_Monochrome_WhiteBG.bmp" />
     <Content Include="Session3Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Session3Model.edmx</DependentUpon>
