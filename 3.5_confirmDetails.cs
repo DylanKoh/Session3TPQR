@@ -121,20 +121,38 @@ namespace Session3
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
-                    else if (d < 42)
+                    else if (d < 19 || (d > 19 && d <= 38))
                     {
-                        smallBusLbl.Text = 1.ToString();
+                        if (d < 19)
+                            smallBusLbl.Text = 1.ToString();
+                        else
+                            smallBusLbl.Text = 2.ToString();
                     }
                     else
                     {
-                        if ((Convert.ToInt32(d / 19) - 2) > 0)
-                        {
-                            bigBusLbl.Text = 1.ToString();
-                        }
+                        if (d < 42) bigBusLbl.Text = 1.ToString();
                         else
                         {
-                            smallBusLbl.Text = (Convert.ToInt32(d / 19) + 1).ToString();
+                            var i = d - 42 * Convert.ToInt32(d / 42);
+                            if (i > 38)
+                            {
+                                bigBusLbl.Text = (Convert.ToInt32(d / 42) + 1).ToString();
+                            }
+                            else if (i <= 38 && i > 0)
+                            {
+                                bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
+                                if (i < 19)
+                                    smallBusLbl.Text = 1.ToString();
+                                else
+                                    smallBusLbl.Text = 2.ToString();
+                            }
+                            else
+                            {
+                                bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
+                            }
+                            
                         }
+                        
                     }
                 }
                 else if (competitorBox.Text.Trim() == "")
@@ -143,20 +161,40 @@ namespace Session3
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
-                    else if (d < 42)
+                    else if (d < 19 || (d > 19 && d <= 38))
                     {
-                        smallBusLbl.Text = 1.ToString();
+                        if (d < 19)
+                            smallBusLbl.Text = 1.ToString();
+                        else
+                            smallBusLbl.Text = 2.ToString();
                     }
                     else
                     {
-                        if ((Convert.ToInt32(d / 19) - 2) > 0)
-                        {
-                            bigBusLbl.Text = 1.ToString();
-                        }
+                        if (d < 42) bigBusLbl.Text = 1.ToString();
                         else
                         {
-                            smallBusLbl.Text = (Convert.ToInt32(d / 19) + 1).ToString();
+                            var i = d - 42 * Convert.ToInt32(d / 42);
+
+                            if (i > 38)
+                            {
+                                bigBusLbl.Text = (Convert.ToInt32(d / 42) + 1).ToString();
+                            }
+                            else if (i <= 38 && i > 0)
+                            {
+                                bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
+                                if (i < 19)
+                                    smallBusLbl.Text = 1.ToString();
+                                else
+                                    smallBusLbl.Text = 2.ToString();
+                            }
+                            else
+                            {
+                                bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
+                            }
                         }
+                        
+
+
                     }
                 }
             }
@@ -173,49 +211,73 @@ namespace Session3
             try
             {
                 int d = Int32.Parse(competitorBox.Text);
-                if (competitorBox.Text.Trim() != "")
+                if (delegateBox.Text.Trim() != "")
                 {
                     d += Int32.Parse(delegateBox.Text);
                     if (d % 19 == 0)
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
-                    else if (d < 42)
+                    else if (d < 19 || (d > 19 && d <= 38))
                     {
-                        smallBusLbl.Text = 1.ToString();
+                        if (d < 19)
+                            smallBusLbl.Text = 1.ToString();
+                        else
+                            smallBusLbl.Text = 2.ToString();
                     }
                     else
                     {
-                        if ((Convert.ToInt32(d / 19) - 2) > 0)
+                        var i = d - 42 * Convert.ToInt32(d / 42);
+                        if (i > 38)
                         {
-                            bigBusLbl.Text = 1.ToString();
+                            bigBusLbl.Text = (Convert.ToInt32(d / 42) + 1).ToString();
+                        }
+                        else if (i <= 38 && i > 0)
+                        {
+                            bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
+                            if (i < 19)
+                                smallBusLbl.Text = 1.ToString();
+                            else
+                                smallBusLbl.Text = 2.ToString();
                         }
                         else
                         {
-                            smallBusLbl.Text = (Convert.ToInt32(d / 19) +1 ).ToString();
+                            bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
                         }
 
                     }
                 }
-                else if (competitorBox.Text.Trim() == "")
+                else if (delegateBox.Text.Trim() == "")
                 {
                     if (d % 19 == 0)
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
-                    else if (d < 42)
+                    else if (d < 19 || (d > 19 && d <= 38))
                     {
-                        smallBusLbl.Text = 1.ToString();
+                        if (d < 19)
+                            smallBusLbl.Text = 1.ToString();
+                        else
+                            smallBusLbl.Text = 2.ToString();
                     }
                     else
                     {
-                        if ((Convert.ToInt32(d / 19) - 2) > 0)
+                        var i = d - 42*Convert.ToInt32(d / 42);
+                        if (i > 38)
                         {
-                            bigBusLbl.Text = 1.ToString();
+                            bigBusLbl.Text = (Convert.ToInt32(d / 42) + 1).ToString();
+                        }
+                        else if (i <= 38 && i > 0)
+                        {
+                            bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
+                            if (i < 19)
+                                smallBusLbl.Text = 1.ToString();
+                            else
+                                smallBusLbl.Text = 2.ToString();
                         }
                         else
                         {
-                            smallBusLbl.Text = (Convert.ToInt32(d / 19) + 1).ToString();
+                            bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
                         }
                     }
                 }
@@ -252,7 +314,7 @@ namespace Session3
                             number42seat = Int32.Parse(bigBusLbl.Text)
                         });
                         context.SaveChanges();
-                        
+
 
                     }
                     else

@@ -43,5 +43,12 @@ namespace Session3
             (new HotelSummary()).ShowDialog();
             this.Close();
         }
+
+        private void guestsSummaryBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new GuestSummary()).ShowDialog();
+            this.Close();
+        }
     }
 }
