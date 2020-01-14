@@ -26,9 +26,7 @@ namespace Session3
         
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            (new Book_Hotel(_userID, 2)).ShowDialog();
-            this.Close();
+            (new Book_Hotel(_userID, 2)).Show();
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -40,37 +38,27 @@ namespace Session3
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            (new Book_Hotel(_userID, 1)).ShowDialog();
-            this.Close();
+            (new Book_Hotel(_userID, 1)).Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            (new Book_Hotel(_userID, 3)).ShowDialog();
-            this.Close();
+            (new Book_Hotel(_userID, 3)).Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            (new Book_Hotel(_userID, 4)).ShowDialog();
-            this.Close();
+            (new Book_Hotel(_userID, 4)).Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            (new Book_Hotel(_userID, 5)).ShowDialog();
-            this.Close();
+            (new Book_Hotel(_userID, 5)).Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            (new Book_Hotel(_userID, 6)).ShowDialog();
-            this.Close();
+            (new Book_Hotel(_userID, 6)).Show();;
         }
     }
 }

@@ -97,11 +97,11 @@
     <Compile Include="Hotel.cs">
       <DependentUpon>Session3Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="HotelSelection.cs">
+    <Compile Include="3.6_HotelSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HotelSelection.Designer.cs">
-      <DependentUpon>HotelSelection.cs</DependentUpon>
+    <Compile Include="3.6_HotelSelection.Designer.cs">
+      <DependentUpon>3.6_HotelSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="HotelSummary.cs">
       <SubType>Form</SubType>
@@ -168,8 +168,8 @@
     <EmbeddedResource Include="3.5_confirmDetails.resx">
       <DependentUpon>3.5_confirmDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HotelSelection.resx">
-      <DependentUpon>HotelSelection.cs</DependentUpon>
+    <EmbeddedResource Include="3.6_HotelSelection.resx">
+      <DependentUpon>3.6_HotelSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HotelSummary.resx">
       <DependentUpon>HotelSummary.cs</DependentUpon>
