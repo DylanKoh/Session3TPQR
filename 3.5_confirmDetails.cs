@@ -83,27 +83,7 @@ namespace Session3
 
         private void headBox_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int head = Int32.Parse(headBox.Text);
-                if (head == 1)
-                {
-                    carLbl.Text = 1.ToString();
-                }
-                else if (head == 0)
-                {
-                    carLbl.Text = 0.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Head of Delegate can only be either 1 or 0!", "Invalid number",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Please enter a valid number or 0!", "No number detected", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void delegateBox_TextChanged(object sender, EventArgs e)
@@ -305,7 +285,7 @@ namespace Session3
                         {
                             arrivalDate = DateTime.Parse("22 July"),
                             arrivalTime = dataGridView1.CurrentCell.Value.ToString(),
-                            numberHead = Int32.Parse(headBox.Text),
+                            numberHead = Convert.ToInt32(headBox.Value),
                             userIdFK = _userID,
                             numberDelegate = Int32.Parse(delegateBox.Text),
                             numberCompetitors = Int32.Parse(competitorBox.Text),
@@ -323,7 +303,7 @@ namespace Session3
                         {
                             arrivalDate = DateTime.Parse("23 July"),
                             arrivalTime = dataGridView1.CurrentCell.Value.ToString(),
-                            numberHead = Int32.Parse(headBox.Text),
+                            numberHead = Convert.ToInt32(headBox.Value),
                             userIdFK = _userID,
                             numberDelegate = Int32.Parse(delegateBox.Text),
                             numberCompetitors = Int32.Parse(competitorBox.Text),
@@ -337,6 +317,31 @@ namespace Session3
                 this.Hide();
                 (new RepresentativeMain(_userID)).ShowDialog();
                 this.Close();
+            }
+        }
+
+        private void headBox_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int head = Convert.ToInt32(headBox.Value); 
+                if (head == 1)
+                {
+                    carLbl.Text = 1.ToString();
+                }
+                else if (head == 0)
+                {
+                    carLbl.Text = 0.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Head of Delegate can only be either 1 or 0!", "Invalid number",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter a valid number or 0!", "No number detected", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
