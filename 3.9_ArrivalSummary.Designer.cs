@@ -87,6 +87,8 @@
             // 
             this.twentysecondList.AllowUserToAddRows = false;
             this.twentysecondList.AllowUserToDeleteRows = false;
+            this.twentysecondList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.twentysecondList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.twentysecondList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.twentysecondList.Location = new System.Drawing.Point(12, 192);
             this.twentysecondList.Name = "twentysecondList";
@@ -99,6 +101,8 @@
             // 
             this.twentythirdList.AllowUserToAddRows = false;
             this.twentythirdList.AllowUserToDeleteRows = false;
+            this.twentythirdList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.twentythirdList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.twentythirdList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.twentythirdList.Location = new System.Drawing.Point(12, 421);
             this.twentythirdList.Name = "twentythirdList";
