@@ -83,7 +83,7 @@ namespace Session3
 
         private void headBox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void delegateBox_TextChanged(object sender, EventArgs e)
@@ -130,9 +130,9 @@ namespace Session3
                             {
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
                             }
-                            
+
                         }
-                        
+
                     }
                 }
                 else if (competitorBox.Text.Trim() == "")
@@ -172,7 +172,7 @@ namespace Session3
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
                             }
                         }
-                        
+
 
 
                     }
@@ -242,7 +242,7 @@ namespace Session3
                     }
                     else
                     {
-                        var i = d - 42*Convert.ToInt32(d / 42);
+                        var i = d - 42 * Convert.ToInt32(d / 42);
                         if (i > 38)
                         {
                             bigBusLbl.Text = (Convert.ToInt32(d / 42) + 1).ToString();
@@ -278,41 +278,80 @@ namespace Session3
             {
                 using (var context = new Session3Entities())
                 {
-                    if (twentysecondBtn.Checked)
+                    var checkIfBookingExist = (from x in context.Arrivals
+                                               where x.userIdFK == _userID
+                                               select x).FirstOrDefault();
+                    if (checkIfBookingExist == null)
                     {
-
-                        context.Arrivals.Add(new Arrival()
+                        if (twentysecondBtn.Checked)
                         {
-                            arrivalDate = DateTime.Parse("22 July"),
-                            arrivalTime = dataGridView1.CurrentCell.Value.ToString(),
-                            numberHead = Convert.ToInt32(headBox.Value),
-                            userIdFK = _userID,
-                            numberDelegate = Int32.Parse(delegateBox.Text),
-                            numberCompetitors = Int32.Parse(competitorBox.Text),
-                            number19seat = Int32.Parse(smallBusLbl.Text),
-                            numberCars = Int32.Parse(carLbl.Text),
-                            number42seat = Int32.Parse(bigBusLbl.Text)
-                        });
-                        context.SaveChanges();
+
+                            context.Arrivals.Add(new Arrival()
+                            {
+                                arrivalDate = DateTime.Parse("22 July"),
+                                arrivalTime = dataGridView1.CurrentCell.Value.ToString(),
+                                numberHead = Convert.ToInt32(headBox.Value),
+                                userIdFK = _userID,
+                                numberDelegate = Int32.Parse(delegateBox.Text),
+                                numberCompetitors = Int32.Parse(competitorBox.Text),
+                                number19seat = Int32.Parse(smallBusLbl.Text),
+                                numberCars = Int32.Parse(carLbl.Text),
+                                number42seat = Int32.Parse(bigBusLbl.Text)
+                            });
+                            context.SaveChanges();
 
 
+                        }
+                        else
+                        {
+                            context.Arrivals.Add(new Arrival()
+                            {
+                                arrivalDate = DateTime.Parse("23 July"),
+                                arrivalTime = dataGridView1.CurrentCell.Value.ToString(),
+                                numberHead = Convert.ToInt32(headBox.Value),
+                                userIdFK = _userID,
+                                numberDelegate = Int32.Parse(delegateBox.Text),
+                                numberCompetitors = Int32.Parse(competitorBox.Text),
+                                number19seat = Int32.Parse(smallBusLbl.Text),
+                                numberCars = Int32.Parse(carLbl.Text),
+                                number42seat = Int32.Parse(bigBusLbl.Text)
+                            });
+                            context.SaveChanges();
+                        }
                     }
                     else
                     {
-                        context.Arrivals.Add(new Arrival()
+                        if (twentysecondBtn.Checked)
                         {
-                            arrivalDate = DateTime.Parse("23 July"),
-                            arrivalTime = dataGridView1.CurrentCell.Value.ToString(),
-                            numberHead = Convert.ToInt32(headBox.Value),
-                            userIdFK = _userID,
-                            numberDelegate = Int32.Parse(delegateBox.Text),
-                            numberCompetitors = Int32.Parse(competitorBox.Text),
-                            number19seat = Int32.Parse(smallBusLbl.Text),
-                            numberCars = Int32.Parse(carLbl.Text),
-                            number42seat = Int32.Parse(bigBusLbl.Text)
-                        });
-                        context.SaveChanges();
+
+
+                            checkIfBookingExist.arrivalDate = DateTime.Parse("22 July");
+                            checkIfBookingExist.arrivalTime = dataGridView1.CurrentCell.Value.ToString();
+                            checkIfBookingExist.numberHead = Convert.ToInt32(headBox.Value);
+                            checkIfBookingExist.numberDelegate = Int32.Parse(delegateBox.Text);
+                            checkIfBookingExist.numberCompetitors = Int32.Parse(competitorBox.Text);
+                            checkIfBookingExist.number19seat = Int32.Parse(smallBusLbl.Text);
+                            checkIfBookingExist.numberCars = Int32.Parse(carLbl.Text);
+                            checkIfBookingExist.number42seat = Int32.Parse(bigBusLbl.Text);
+
+                            context.SaveChanges();
+
+
+                        }
+                        else
+                        {
+                            checkIfBookingExist.arrivalDate = DateTime.Parse("23 July");
+                            checkIfBookingExist.arrivalTime = dataGridView1.CurrentCell.Value.ToString();
+                            checkIfBookingExist.numberHead = Convert.ToInt32(headBox.Value);
+                            checkIfBookingExist.numberDelegate = Int32.Parse(delegateBox.Text);
+                            checkIfBookingExist.numberCompetitors = Int32.Parse(competitorBox.Text);
+                            checkIfBookingExist.number19seat = Int32.Parse(smallBusLbl.Text);
+                            checkIfBookingExist.numberCars = Int32.Parse(carLbl.Text);
+                            checkIfBookingExist.number42seat = Int32.Parse(bigBusLbl.Text);
+                            context.SaveChanges();
+                        }
                     }
+
                 }
                 this.Hide();
                 (new RepresentativeMain(_userID)).ShowDialog();
@@ -324,7 +363,7 @@ namespace Session3
         {
             try
             {
-                int head = Convert.ToInt32(headBox.Value); 
+                int head = Convert.ToInt32(headBox.Value);
                 if (head == 1)
                 {
                     carLbl.Text = 1.ToString();

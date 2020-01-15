@@ -50,7 +50,9 @@ namespace Session3
                 dataGridView1.Columns[3].Name = "Rooms Required";
                 dataGridView1.Columns[4].Name = "Sub-Total ($)";
 
-
+                var checkArrival = (from x in context.Arrivals
+                                    where x.userIdFK == _userID
+                                    select x.arrivalDate).FirstOrDefault();
                 if (Int32.Parse(competitorPax.Text) % 2 == 0)
                 {
                     List<string> row1 = new List<string>()
