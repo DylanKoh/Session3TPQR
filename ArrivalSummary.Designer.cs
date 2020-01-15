@@ -32,13 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.twentysecondList = new System.Windows.Forms.DataGridView();
+            this.twentythirdList = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twentysecondList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twentythirdList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +71,7 @@
             this.backBtn.TabIndex = 0;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // label2
             // 
@@ -82,25 +83,29 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Arrival Summary";
             // 
-            // dataGridView1
+            // twentysecondList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 192);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1019, 138);
-            this.dataGridView1.TabIndex = 6;
+            this.twentysecondList.AllowUserToAddRows = false;
+            this.twentysecondList.AllowUserToDeleteRows = false;
+            this.twentysecondList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.twentysecondList.Location = new System.Drawing.Point(12, 192);
+            this.twentysecondList.Name = "twentysecondList";
+            this.twentysecondList.RowHeadersWidth = 51;
+            this.twentysecondList.RowTemplate.Height = 24;
+            this.twentysecondList.Size = new System.Drawing.Size(1019, 138);
+            this.twentysecondList.TabIndex = 6;
             // 
-            // dataGridView2
+            // twentythirdList
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 421);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1016, 150);
-            this.dataGridView2.TabIndex = 7;
+            this.twentythirdList.AllowUserToAddRows = false;
+            this.twentythirdList.AllowUserToDeleteRows = false;
+            this.twentythirdList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.twentythirdList.Location = new System.Drawing.Point(12, 421);
+            this.twentythirdList.Name = "twentythirdList";
+            this.twentythirdList.RowHeadersWidth = 51;
+            this.twentythirdList.RowTemplate.Height = 24;
+            this.twentythirdList.Size = new System.Drawing.Size(1016, 150);
+            this.twentythirdList.TabIndex = 7;
             // 
             // label3
             // 
@@ -127,18 +132,19 @@
             this.ClientSize = new System.Drawing.Size(1043, 644);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.twentythirdList);
+            this.Controls.Add(this.twentysecondList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ArrivalSummary";
-            this.Text = "ArrivalSummary";
+            this.Text = "Arrival Summary";
+            this.Load += new System.EventHandler(this.ArrivalSummary_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twentysecondList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twentythirdList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,8 +156,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView twentysecondList;
+        private System.Windows.Forms.DataGridView twentythirdList;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
     }

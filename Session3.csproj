@@ -103,11 +103,11 @@
     <Compile Include="3.6_HotelSelection.Designer.cs">
       <DependentUpon>3.6_HotelSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotelSummary.cs">
+    <Compile Include="3.10_HotelSummary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HotelSummary.Designer.cs">
-      <DependentUpon>HotelSummary.cs</DependentUpon>
+    <Compile Include="3.10_HotelSummary.Designer.cs">
+      <DependentUpon>3.10_HotelSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="3.1_Login.cs">
       <SubType>Form</SubType>
@@ -171,8 +171,8 @@
     <EmbeddedResource Include="3.6_HotelSelection.resx">
       <DependentUpon>3.6_HotelSelection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HotelSummary.resx">
-      <DependentUpon>HotelSummary.cs</DependentUpon>
+    <EmbeddedResource Include="3.10_HotelSummary.resx">
+      <DependentUpon>3.10_HotelSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3.1_Login.resx">
       <DependentUpon>3.1_Login.cs</DependentUpon>
