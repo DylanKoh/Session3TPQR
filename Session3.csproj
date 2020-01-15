@@ -76,11 +76,11 @@
     <Compile Include="ArrivalSummary.Designer.cs">
       <DependentUpon>ArrivalSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookHotel.cs">
+    <Compile Include="3.7_BookHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookHotel.Designer.cs">
-      <DependentUpon>BookHotel.cs</DependentUpon>
+    <Compile Include="3.7_BookHotel.Designer.cs">
+      <DependentUpon>3.7_BookHotel.cs</DependentUpon>
     </Compile>
     <Compile Include="3.5_ConfirmArrivalDetails.cs">
       <SubType>Form</SubType>
@@ -162,8 +162,8 @@
     <EmbeddedResource Include="ArrivalSummary.resx">
       <DependentUpon>ArrivalSummary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookHotel.resx">
-      <DependentUpon>BookHotel.cs</DependentUpon>
+    <EmbeddedResource Include="3.7_BookHotel.resx">
+      <DependentUpon>3.7_BookHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3.5_ConfirmArrivalDetails.resx">
       <DependentUpon>3.5_ConfirmArrivalDetails.cs</DependentUpon>

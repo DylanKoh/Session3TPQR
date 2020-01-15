@@ -154,7 +154,7 @@
             // totalValue
             // 
             this.totalValue.AutoSize = true;
-            this.totalValue.Location = new System.Drawing.Point(724, 419);
+            this.totalValue.Location = new System.Drawing.Point(720, 419);
             this.totalValue.Name = "totalValue";
             this.totalValue.Size = new System.Drawing.Size(114, 25);
             this.totalValue.TabIndex = 11;
@@ -181,6 +181,8 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1013, 150);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // Book_Hotel
             // 
@@ -200,7 +202,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Book_Hotel";
             this.Text = "Hotel Booking";
             this.Load += new System.EventHandler(this.Book_Hotel_Load);
