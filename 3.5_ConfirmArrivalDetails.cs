@@ -39,6 +39,8 @@ namespace Session3
 
         private void GridRefresh()
         {
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
             dataGridView1.ColumnHeadersVisible = false;
             dataGridView1.ColumnCount = 8;
             dataGridView1.Columns[0].Name = "9am";
@@ -94,7 +96,7 @@ namespace Session3
             try
             {
                 int d = Int32.Parse(delegateBox.Text);
-                if (competitorBox.Text.Trim() != "")
+                if (competitorBox.Text.Trim() != "0" || competitorBox.Text.Trim() != "")
                 {
                     d += Int32.Parse(competitorBox.Text);
                     if (d % 19 == 0)
@@ -135,7 +137,7 @@ namespace Session3
 
                     }
                 }
-                else if (competitorBox.Text.Trim() == "")
+                else if (competitorBox.Text.Trim() == "0" || competitorBox.Text.Trim() == "")
                 {
                     if (d % 19 == 0)
                     {
@@ -191,7 +193,7 @@ namespace Session3
             try
             {
                 int d = Int32.Parse(competitorBox.Text);
-                if (delegateBox.Text.Trim() != "")
+                if (delegateBox.Text.Trim() != "0" || delegateBox.Text.Trim() != "")
                 {
                     d += Int32.Parse(delegateBox.Text);
                     if (d % 19 == 0)
@@ -227,7 +229,7 @@ namespace Session3
 
                     }
                 }
-                else if (delegateBox.Text.Trim() == "")
+                else if (delegateBox.Text.Trim() == "0" || delegateBox.Text.Trim() == "")
                 {
                     if (d % 19 == 0)
                     {
@@ -382,6 +384,10 @@ namespace Session3
             {
                 MessageBox.Show("Please enter a valid number or 0!", "No number detected", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
         }
     }
 }

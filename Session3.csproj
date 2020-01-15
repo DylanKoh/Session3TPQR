@@ -141,11 +141,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Session3Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Update.cs">
+    <Compile Include="3.8_Update.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update.Designer.cs">
-      <DependentUpon>Update.cs</DependentUpon>
+    <Compile Include="3.8_Update.Designer.cs">
+      <DependentUpon>3.8_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Session3Model.tt</DependentUpon>
@@ -190,8 +190,8 @@
     <EmbeddedResource Include="3.3_RepresentativeMain.resx">
       <DependentUpon>3.3_RepresentativeMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update.resx">
-      <DependentUpon>Update.cs</DependentUpon>
+    <EmbeddedResource Include="3.8_Update.resx">
+      <DependentUpon>3.8_Update.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

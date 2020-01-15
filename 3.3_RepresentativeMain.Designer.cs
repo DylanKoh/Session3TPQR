@@ -103,12 +103,13 @@
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(354, 389);
+            this.updateBtn.Location = new System.Drawing.Point(354, 388);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(273, 77);
             this.updateBtn.TabIndex = 4;
             this.updateBtn.Text = "Update Info / Booking";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // RepresentativeMain
             // 
