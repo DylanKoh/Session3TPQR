@@ -99,7 +99,7 @@ namespace Session3
                 if (competitorBox.Text.Trim() != "0" || competitorBox.Text.Trim() != "")
                 {
                     d += Int32.Parse(competitorBox.Text);
-                    if (d % 19 == 0)
+                    if (d % 19 == 0 && d <= 38)
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
@@ -139,7 +139,7 @@ namespace Session3
                 }
                 else if (competitorBox.Text.Trim() == "0" || competitorBox.Text.Trim() == "")
                 {
-                    if (d % 19 == 0)
+                    if (d % 19 == 0 && d <= 38)
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
@@ -196,7 +196,7 @@ namespace Session3
                 if (delegateBox.Text.Trim() != "0" || delegateBox.Text.Trim() != "")
                 {
                     d += Int32.Parse(delegateBox.Text);
-                    if (d % 19 == 0)
+                    if (d % 19 == 0 && d <= 38)
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
@@ -231,7 +231,7 @@ namespace Session3
                 }
                 else if (delegateBox.Text.Trim() == "0" || delegateBox.Text.Trim() == "")
                 {
-                    if (d % 19 == 0)
+                    if (d % 19 == 0 && d <= 38)
                     {
                         smallBusLbl.Text = (d / 19).ToString();
                     }
