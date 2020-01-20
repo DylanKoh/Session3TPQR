@@ -103,6 +103,12 @@ namespace Session3
 
         }
 
+        /// <summary>
+        /// When number of delegate is keyed in, this method houses the algorithm to
+        /// calculate the required number 19-seater and 42-seater buses
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void delegateBox_TextChanged(object sender, EventArgs e)
         {
             bigBusLbl.Text = 0.ToString();
@@ -110,41 +116,69 @@ namespace Session3
 
             try
             {
+                ///d stands for number of attendees (without head)!!
                 int d = Int32.Parse(delegateBox.Text);
+
+                //Check if competitor number is not 0 or empty
                 if (competitorBox.Text.Trim() != "0" || competitorBox.Text.Trim() != "")
                 {
+                    //Adds number od competitor to amount variable
                     d += Int32.Parse(competitorBox.Text);
+
+                    //Checks if number of attendees (excluding head) is divisible by 19 and is smaller or equals to 38
                     if (d % 19 == 0 && d <= 38)
                     {
+                        //If so, number of 19-seater buses is the quotient of attendees / 19
                         smallBusLbl.Text = (d / 19).ToString();
                     }
+                    
+                    //Else, check if number of attendees is less than 19 or is more than 19 but less than or equals to 38
                     else if (d < 19 || (d > 19 && d <= 38))
                     {
+                        //If less than 19, 1 19-seater bus will be booked
                         if (d < 19)
                             smallBusLbl.Text = 1.ToString();
+
+                        //Else, 2 19-seater buses will be booked
                         else
                             smallBusLbl.Text = 2.ToString();
                     }
+
+                    //Else if number of attendees is more than 38...
                     else
                     {
+                        //Check if number of attendees is still less than 42. If so, number of 42-seater buses booked will be 1
                         if (d < 42) bigBusLbl.Text = 1.ToString();
                         else
                         {
+                            //Find remainder after minusing off quotient of attendees / 42
                             var i = d - 42 * Convert.ToInt32(d / 42);
+
+                            //If remainder is more than 38, 42-seater buses is quotient of attendees / 42 then + 1
                             if (i > 38)
                             {
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42) + 1).ToString();
                             }
+
+                            //Else if remainder is less than or equals to 38 and is also more than 0
                             else if (i <= 38 && i > 0)
                             {
+                                //1 42-seater bus is booked
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
-                                if (i < 19)
+
+                                //If remainder is less than or equals to 19, 1 19-seater bus will also be booked
+                                if (i <= 19)
                                     smallBusLbl.Text = 1.ToString();
+
+                                //Else, 2 19-seater buses will also be booked
                                 else
                                     smallBusLbl.Text = 2.ToString();
                             }
+
+                            //If remainder is 0
                             else
                             {
+                                //Number of 42-seater buses that will be booked is quotient of attendees / 42
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
                             }
 
@@ -152,40 +186,64 @@ namespace Session3
 
                     }
                 }
+
+                //Checks if number of competitor os 0 or empty
                 else if (competitorBox.Text.Trim() == "0" || competitorBox.Text.Trim() == "")
                 {
+                    //Checks if number of attendees (excluding head) is divisible by 19 and is smaller or equals to 38
                     if (d % 19 == 0 && d <= 38)
                     {
+                        //If so, number of 19-seater buses is the quotient of attendees / 19
                         smallBusLbl.Text = (d / 19).ToString();
                     }
+
+                    //Else, check if number of attendees is less than 19 or is more than 19 but less than or equals to 38
                     else if (d < 19 || (d > 19 && d <= 38))
                     {
+                        //If less than 19, 1 19-seater bus will be booked
                         if (d < 19)
                             smallBusLbl.Text = 1.ToString();
+
+                        //Else, 2 19-seater buses will be booked
                         else
                             smallBusLbl.Text = 2.ToString();
                     }
+
+                    //Else if number of attendees is more than 38...
                     else
                     {
+                        //Check if number of attendees is still less than 42. If so, number of 42-seater buses booked will be 1
                         if (d < 42) bigBusLbl.Text = 1.ToString();
                         else
                         {
+                            //Find remainder after minusing off quotient of attendees / 42
                             var i = d - 42 * Convert.ToInt32(d / 42);
 
+                            //If remainder is more than 38, 42-seater buses is quotient of attendees / 42 then + 1
                             if (i > 38)
                             {
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42) + 1).ToString();
                             }
+
+                            //Else if remainder is less than or equals to 38 and is also more than 0
                             else if (i <= 38 && i > 0)
                             {
+                                //1 42-seater bus is booked
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
-                                if (i < 19)
+
+                                //If remainder is less than or equals to 19, 1 19-seater bus will also be booked
+                                if (i <= 19)
                                     smallBusLbl.Text = 1.ToString();
+
+                                //Else, 2 19-seater buses will also be booked
                                 else
                                     smallBusLbl.Text = 2.ToString();
                             }
+
+                            //If remainder is 0
                             else
                             {
+                                //Number of 42-seater buses that will be booked is quotient of attendees / 42
                                 bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
                             }
                         }
@@ -201,6 +259,12 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// The method has the exact same algorithm as delegateBox_TextChanged with slight details changed like checking if delegate is 0/empty or not.
+        /// Calculation is the exact same.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void competitorBox_TextChanged(object sender, EventArgs e)
         {
             bigBusLbl.Text = 0.ToString();
@@ -232,7 +296,7 @@ namespace Session3
                         else if (i <= 38 && i > 0)
                         {
                             bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
-                            if (i < 19)
+                            if (i <= 19)
                                 smallBusLbl.Text = 1.ToString();
                             else
                                 smallBusLbl.Text = 2.ToString();
@@ -267,7 +331,7 @@ namespace Session3
                         else if (i <= 38 && i > 0)
                         {
                             bigBusLbl.Text = (Convert.ToInt32(d / 42)).ToString();
-                            if (i < 19)
+                            if (i <= 19)
                                 smallBusLbl.Text = 1.ToString();
                             else
                                 smallBusLbl.Text = 2.ToString();
@@ -285,8 +349,14 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Triggered when the Confirm button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void confirmBtn_Click(object sender, EventArgs e)
         {
+            //Check if there is even a dell selected for timing or if the cell backcolor is black. If so, prompts error message
             if (dataGridView1.CurrentCell == null || dataGridView1.CurrentCell.Style.BackColor == Color.Black)
             {
                 MessageBox.Show("Please select a timing that is not blacked out!");
@@ -298,8 +368,11 @@ namespace Session3
                     var checkIfBookingExist = (from x in context.Arrivals
                                                where x.userIdFK == _userID
                                                select x).FirstOrDefault();
+
+                    //If booking does not exist in DB, add details to DB
                     if (checkIfBookingExist == null)
                     {
+                        //If 22nd July is checked, then add date as 22 July 2020
                         if (twentysecondBtn.Checked)
                         {
 
@@ -319,6 +392,7 @@ namespace Session3
 
 
                         }
+                        //If 23rd July is checked, then add date as 23 July 2020
                         else
                         {
                             context.Arrivals.Add(new Arrival()
@@ -336,8 +410,11 @@ namespace Session3
                             context.SaveChanges();
                         }
                     }
+
+                    //Else, if booking already exist in DB, update details to DB
                     else
                     {
+                        //If 22nd July is checked, then update date as 22 July 2020
                         if (twentysecondBtn.Checked)
                         {
 
@@ -355,6 +432,8 @@ namespace Session3
 
 
                         }
+
+                        //If 23rd July is checked, then update date as 23 July 2020
                         else
                         {
                             checkIfBookingExist.arrivalDate = DateTime.Parse("23 July");
@@ -376,6 +455,12 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// This is triggered when value is changed from 0 to 1 or back to 0. Calculates whether a car is neeeded for the Head of delegate as the
+        /// value is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void headBox_ValueChanged(object sender, EventArgs e)
         {
             try
