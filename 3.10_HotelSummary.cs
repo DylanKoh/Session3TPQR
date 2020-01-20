@@ -17,6 +17,7 @@ namespace Session3
             InitializeComponent();
         }
 
+        //Redirects user back to Admin Main Menu
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
