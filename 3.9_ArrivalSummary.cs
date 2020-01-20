@@ -53,6 +53,8 @@ namespace Session3
                 var grouping22 = (from x in context.Arrivals
                                   where x.arrivalDate == date
                                   select x);
+
+                //List for Cell row since only showing 1 row
                 var list = new List<string>()
                 {
                     "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm"
@@ -63,6 +65,7 @@ namespace Session3
                 twentysecondList.Columns["1pm"].DefaultCellStyle.BackColor = Color.Black;
                 twentysecondList.Columns["2pm"].DefaultCellStyle.BackColor = Color.Black;
 
+                //If anyone arrives on the 22nd, adds Country name and vehicles provided to the cell based on the relevant timing
                 foreach (var item in arrivingOn22)
                 {
                     StringBuilder sb = new StringBuilder();
@@ -100,6 +103,7 @@ namespace Session3
 
                 twentythirdList.Rows.Add(list.ToArray());
 
+                //If anyone arrives on the 23rd, adds Country name and vehicles provided to the cell based on the relevant timing
                 foreach (var item in arrivingOn23)
                 {
                     StringBuilder sb = new StringBuilder();
@@ -109,7 +113,7 @@ namespace Session3
                         var total = item2.number19seat + item2.number42seat + item2.numberCars;
                         sb.Append($"\n\n{item2.User.countryName}\n({total} vehicles)");
                     }
-                    twentythirdList.Rows[0].Cells[$"{item}"].Value = sb.ToString();
+                    twentythirdList.Rows[0].Cells[item].Value = sb.ToString();
                 }
 
                 twentythirdList.Columns["9am"].DefaultCellStyle.BackColor = Color.Black;
