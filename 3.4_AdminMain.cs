@@ -22,6 +22,7 @@ namespace Session3
 
         }
 
+        //Redirects user back to Login page - 3.1
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -30,6 +31,7 @@ namespace Session3
 
         }
 
+        //Redirects user back to Arrival Summary page - 3.9
         private void arrivalSummaryBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -37,6 +39,7 @@ namespace Session3
             this.Close();
         }
 
+        //Redirects user back to Hotel Summary page - 3.10
         private void hotelSummaryBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -44,6 +47,7 @@ namespace Session3
             this.Close();
         }
 
+        //Redirects user back to Guest Summary page - 3.11
         private void guestsSummaryBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
