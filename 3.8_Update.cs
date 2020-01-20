@@ -23,6 +23,7 @@ namespace Session3
         {
             using (var context = new Session3Entities())
             {
+                #region Populating fields of current booking
                 var getBookings = (from x in context.Arrivals
                                    where x.userIdFK == _userID
                                    join y in context.Hotel_Booking on x.userIdFK equals y.userIdFK
@@ -30,16 +31,25 @@ namespace Session3
                 numHeadOfDelegation.Value = getBookings.x.numberHead;
                 txtDelegates.Text = getBookings.x.numberDelegate.ToString();
                 txtCompetitors.Text = getBookings.x.numberCompetitors.ToString();
+                #endregion
             }
+
+            //Loads the DGV
             GridRefresh();
         }
 
+        //Redirects user back to Representative Main Menu - 3.3
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             (new RepresentativeMain(_userID)).ShowDialog();
             this.Close();
         }
+
+        /// <summary>
+        /// This method is responsible for the loading of the DGV and the previously booked number of rooms of the hotels.
+        /// New required rooms field and new sub-total will be 0 by default
+        /// </summary>
         private void GridRefresh()
         {
             dataGridView1.ColumnCount = 6;
@@ -78,10 +88,17 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Triggered when value change is committed (Pressed enter)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            //Runs if only the change happens in the 5th Column of the DGV
             if (e.ColumnIndex == 4)
             {
+                //Check if there are any overbooking of rooms based on available rooms of the room types of the hotel
                 if(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) > Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value))
                 {
                     MessageBox.Show("Unable to reserve more rooms than current availble rooms!", "Insufficient Rooms",
@@ -97,6 +114,8 @@ namespace Session3
                         var getDate = (from x in context.Arrivals
                                        where x.userIdFK == _userID
                                        select x.arrivalDate).First();
+
+                        //Calculation based on 22nd July arrival
                         if (getDate == DateTime.Parse("22 July"))
                         {
                             dataGridView1.Rows[e.RowIndex].Cells[5].Value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value) *
@@ -107,6 +126,8 @@ namespace Session3
                             }
                             lblTotal.Text += total.ToString();
                         }
+
+                        //Calculation based on 23rd July arrival
                         else
                         {
                             dataGridView1.Rows[e.RowIndex].Cells[5].Value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value) *
@@ -122,6 +143,11 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Triggered when Update button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (Int32.Parse(txtDelegates.Text) < 0 || Int32.Parse(txtCompetitors.Text) < 0)
@@ -134,6 +160,7 @@ namespace Session3
                 var dl = MessageBox.Show("Are you sure you want to update your info and bookings?",
                 "Update details", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                ///If user click Yes response in MessageBox, run update to DB
                 if (dl == DialogResult.Yes)
                 {
                     var getComparisonSingle = Convert.ToInt32(dataGridView1.Rows[0].Cells[4].Value) - Convert.ToInt32(dataGridView1.Rows[0].Cells[3].Value);
@@ -179,6 +206,11 @@ namespace Session3
             
         }
 
+        /// <summary>
+        /// Does a try catch so that it warns User to key in a valid integer and will not crash application when attempting to update details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtDelegates_TextChanged(object sender, EventArgs e)
         {
             try
@@ -193,6 +225,11 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Does a try catch so that it warns User to key in a valid integer and will not crash application when attempting to update details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCompetitors_TextChanged(object sender, EventArgs e)
         {
             try
