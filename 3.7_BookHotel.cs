@@ -147,6 +147,15 @@ namespace Session3
             {
                 using (var context = new Session3Entities())
                 {
+                    var checkBooking = (from x in context.Hotel_Booking
+                                        where x.userIdFK == _userID
+                                        select x).ToList();
+                    foreach (var item in checkBooking)
+                    {
+                        context.Hotel_Booking.Remove(item);
+                        context.SaveChanges();
+                    }
+
                     context.Hotel_Booking.Add(new Hotel_Booking()
                     {
                         hotelIdFK = _hotelID,
