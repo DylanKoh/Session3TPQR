@@ -24,6 +24,7 @@ namespace Session3
 
         }
 
+        //Redirects user back to Representative Main Menu page - 3.3
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -31,12 +32,20 @@ namespace Session3
             this.Close();
         }
 
+        /// <summary>
+        /// When 22nd July is selected, reload the DGV with relevant coloring of cells
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void twentysecondBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             GridRefresh();
         }
 
+        /// <summary>
+        /// This method is responsible for loading the relevant cells (Timings) of the DGV and coloring the invalid timings black
+        /// </summary>
         private void GridRefresh()
         {
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Yellow;
@@ -71,6 +80,12 @@ namespace Session3
 
         }
 
+        /// <summary>
+        /// When the 23rd July radio button is selected, refreshes the DGV again by clearing and repopulating
+        /// it with relevant coloring of the invalid timings of the day
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void twentythirdBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
