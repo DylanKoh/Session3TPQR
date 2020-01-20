@@ -24,6 +24,7 @@ namespace Session3
 
         }
 
+        //Redirects user back to Login page - 3.1
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -31,6 +32,7 @@ namespace Session3
             this.Close();
         }
 
+        //Redirects user to Confirm Arrival page - 3.5
         private void confirmBtn_Click(object sender, EventArgs e)
         {
             
@@ -41,6 +43,7 @@ namespace Session3
 
         }
 
+        //Redirects user to Hotel Selection page - 3.6
         private void bookingBtn_Click(object sender, EventArgs e)
         {
             using (var context = new Session3Entities())
@@ -64,6 +67,7 @@ namespace Session3
             
         }
 
+        //Redirects user to Update Info/Booking page - 3.8
         private void updateBtn_Click(object sender, EventArgs e)
         {
             using (var context = new Session3Entities())
