@@ -33,6 +33,16 @@ namespace Session3
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
+            
+
+            this.Hide();
+            (new confirmDetails(_userID)).ShowDialog();
+            this.Close();
+
+        }
+
+        private void bookingBtn_Click(object sender, EventArgs e)
+        {
             using (var context = new Session3Entities())
             {
                 var checkBookings = (from x in context.Arrivals
@@ -41,7 +51,7 @@ namespace Session3
                 if (checkBookings != null)
                 {
                     this.Hide();
-                    (new confirmDetails(_userID)).ShowDialog();
+                    (new HotelSelection(_userID)).ShowDialog();
                     this.Close();
                 }
                 else
@@ -49,16 +59,9 @@ namespace Session3
                     MessageBox.Show("Please confirm your arrival details first!", "No details for arrival confrimed!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
             
-        }
-
-        private void bookingBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            (new HotelSelection(_userID)).ShowDialog();
-            this.Close();
         }
 
         private void updateBtn_Click(object sender, EventArgs e)

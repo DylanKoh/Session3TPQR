@@ -98,6 +98,8 @@ namespace Session3
                                   where x.arrivalDate == date2
                                   select x);
 
+                twentythirdList.Rows.Add(list.ToArray());
+
                 foreach (var item in arrivingOn23)
                 {
                     StringBuilder sb = new StringBuilder();
@@ -107,10 +109,9 @@ namespace Session3
                         var total = item2.number19seat + item2.number42seat + item2.numberCars;
                         sb.Append($"\n\n{item2.User.countryName}\n({total} vehicles)");
                     }
-                    twentythirdList.Rows[0].Cells[item].Value = sb.ToString();
+                    twentythirdList.Rows[0].Cells[$"{item}"].Value = sb.ToString();
                 }
 
-                twentythirdList.Rows.Add(list.ToArray());
                 twentythirdList.Columns["9am"].DefaultCellStyle.BackColor = Color.Black;
                 twentythirdList.Columns["12pm"].DefaultCellStyle.BackColor = Color.Black;
                 twentythirdList.Columns["4pm"].DefaultCellStyle.BackColor = Color.Black;
