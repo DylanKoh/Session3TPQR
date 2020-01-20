@@ -27,6 +27,8 @@ namespace Session3
         {
             using (var context = new Session3Entities())
             {
+
+                //Checks if User ID or password field is empty
                 if (userIDBox.Text.Trim() == "" || passwordBox.Text.Trim() == "")
                 {
                     MessageBox.Show("Please check your User ID or Password fields!", "Empty Fields",
@@ -38,11 +40,15 @@ namespace Session3
                     var getUser = (from x in context.Users
                                    where x.userId == userIDBox.Text
                                    select x).FirstOrDefault();
+
+                    //Checks if User exist in DB
                     if (getUser == null)
                     {
                         MessageBox.Show("User does not exist!", "Invalid Credentials",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+
+                    //Check if password enteredmatches DB password
                     else if (passwordBox.Text != getUser.passwd)
                     {
                         MessageBox.Show("Password is incorrect!", "Invalid Credentials",
@@ -54,6 +60,7 @@ namespace Session3
                                            where x.userTypeId == getUser.userTypeIdFK
                                            select x.userTypeName).FirstOrDefault();
 
+                        //Gets the User type and redirects the user to Representative Main Menu if user is a Country Rep - 3.3
                         if (getUserType == "Country Rep")
                         {
                             MessageBox.Show($"Welcome {getUser.countryName}!", "Successful Login",
@@ -62,6 +69,8 @@ namespace Session3
                             (new RepresentativeMain(getUser.userId)).ShowDialog();
                             this.Close();
                         }
+
+                        //If not Country Rep, redirects to Admin Main Menu - 3.4
                         else
                         {
                             MessageBox.Show($"Welcome {getUser.countryName}!", "Successful Login",
