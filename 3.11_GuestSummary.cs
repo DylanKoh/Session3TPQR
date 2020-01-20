@@ -17,6 +17,7 @@ namespace Session3
             InitializeComponent();
         }
 
+        //Redirects user back to Admin Main Menu page - 3.4
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -24,15 +25,26 @@ namespace Session3
             this.Close();
         }
 
+        /// <summary>
+        /// Onload, load initial pie chart with no filter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GuestSummary_Load(object sender, EventArgs e)
         {
             cbTypeGuest.SelectedItem = "No Filter";
             LoadGraph();
         }
+
+        /// <summary>
+        /// This method is responsible in filling points of Pie Chart based on filtered options
+        /// </summary>
         private void LoadGraph()
         {
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
+
+            //Check if filter is on No Filter
             if (cbTypeGuest.SelectedItem.ToString() == "No Filter")
             {
                 using (var context = new Session3Entities())
@@ -53,6 +65,8 @@ namespace Session3
                     }
                 }
             }
+
+            //Check if filter is on Delegates
             else if (cbTypeGuest.SelectedItem.ToString() == "Delegates")
             {
                 using (var context = new Session3Entities())
@@ -72,6 +86,8 @@ namespace Session3
                     }
                 }
             }
+
+            //Else get data based on filter of Competitors
             else
             {
                 using (var context = new Session3Entities())
@@ -94,6 +110,11 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Every time selected filter changes, calls to reload Pie Chart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbTypeGuest_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadGraph();
