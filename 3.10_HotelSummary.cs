@@ -24,6 +24,11 @@ namespace Session3
             this.Close();
         }
 
+        /// <summary>
+        /// Gets the rooms booked for the Hotel Royal Queens
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntHotelRoyalQueens_Click(object sender, EventArgs e)
         {
             lblHotelName.Text = "Hotal Name: ";
@@ -46,6 +51,10 @@ namespace Session3
                 lblHotelName.Text += "Hotel Royal Queens";
             }
         }
+
+        /// <summary>
+        /// Initialise the columns
+        /// </summary>
         private void GridRefresh()
         {
             dataGridView1.ColumnCount = 3;
@@ -54,6 +63,11 @@ namespace Session3
             dataGridView1.Columns[2].Name = "No. of Double Rooms Booked";
         }
 
+        /// <summary>
+        /// Gets the rooms booked for the Hotel Grand Pacific
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHotelGrandPacific_Click(object sender, EventArgs e)
         {
             lblHotelName.Text = "Hotal Name: ";
@@ -77,6 +91,11 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Gets the rooms booked for the Intercontinental Singapore
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIntercontinentalSingapore_Click(object sender, EventArgs e)
         {
             lblHotelName.Text = "Hotal Name: ";
@@ -100,6 +119,11 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Gets the rooms booked for the Carlton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCarlton_Click(object sender, EventArgs e)
         {
             lblHotelName.Text = "Hotal Name: ";
@@ -123,6 +147,11 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Gets the rooms booked for the Pan Pacific Singapore
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPanPacificSingapore_Click(object sender, EventArgs e)
         {
             lblHotelName.Text = "Hotal Name: ";
@@ -146,6 +175,11 @@ namespace Session3
             }
         }
 
+        /// <summary>
+        /// Gets the rooms booked for the Ritz-Carlton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRitzCarlton_Click(object sender, EventArgs e)
         {
             lblHotelName.Text = "Hotal Name: ";
