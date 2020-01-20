@@ -160,8 +160,6 @@ namespace Session3
                     getUpdate.numDoubleRoomsBooked += Convert.ToInt32(dataGridView1.Rows[1].Cells[3].Value);
                     getUpdate.numSingleRoomsBooked += Convert.ToInt32(dataGridView1.Rows[0].Cells[3].Value);
                     context.SaveChanges();
-                    this.Hide();
-                    (new RepresentativeMain(_userID)).ShowDialog();
                     this.Close();
                 }
             }
